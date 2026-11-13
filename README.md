@@ -227,9 +227,14 @@ python src/generate_visualizations.py
 ## 👤 Author & Academic Credits
 * **Student Name:** Masakapalli Chaya Satya Triveni
 * **Roll Number:** A23126552219
+* **Project Title:** Financial Fraud Detection Analytics
+* **Dataset Source:** Kaggle - Nigerian Financial Transactions
+* **ML Model:** Random Forest Classifier (PySpark MLlib)
+* **Performance:** Random Forest — Accuracy: 96.36%, F1: 94.57%, AUC: 0.5817
 * **Department:** Department of Computer Science & Engineering
 * **Course:** Big Data Analytics (BDA) Laboratory
 * **GitHub:** [@MasakapalliTriveni-20](https://github.com/MasakapalliTriveni-20)
+* **LinkedIn:** [Masakapalli Chaya Satya Triveni](https://www.linkedin.com/in/masakapalli-triveni)
 
 ---
 

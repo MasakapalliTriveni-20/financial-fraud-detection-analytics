@@ -6,5 +6,5 @@
     "anomalies_detected": 5000,
     "normal_detected": 95000,
     "pct_anomalous": 5.0,
-    "training_time_sec": 0.67
+    "training_time_sec": 0.72
 }
