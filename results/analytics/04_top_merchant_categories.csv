@@ -1,0 +1,11 @@
+merchant_category,total_txns,fraud_txns,fraud_pct,total_merchant_volume
+Other Transaction,37830,1363,3.6,27806051620.46
+ATM Withdrawal,6248,248,3.97,4767640956.4
+Bolt Ride,6170,242,3.92,4973499316.87
+Arik Air Flight,6254,235,3.76,4729747838.25
+Filmhouse Cinemas Ticket,6152,234,3.8,4650129321.77
+SportyBet Deposit,6259,232,3.71,4847450114.23
+Shoprite Purchase,6273,224,3.57,4519161808.89
+Church Offering,6135,224,3.65,4519046717.94
+POS Withdrawal,6293,223,3.54,4590379079.42
+Local Market Purchase,6286,221,3.52,4684977931.69

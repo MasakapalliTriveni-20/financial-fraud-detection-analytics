@@ -1,0 +1,34 @@
+11. Mini Practice Case Study
+(sample titles)
+11.1. Healthcare Analytics for Disease Pattern Detection
+Design and develop a Big Data–based healthcare analytics system to process large-scale patient
+health records. The system should enable distributed storage, analytical querying, and machine
+learning–based pattern identification for detecting disease trends and risk categories across
+populations.
+11. 2. Financial Fraud Detection Analytics Platform
+Develop a scalable Big Data framework for analyzing high-volume financial transaction data to
+identify suspicious patterns and potential fraud behavior. The system should integrate distributed
+storage, large-scale processing, and machine learning–based classification techniques.
+11.3. Cybersecurity Log Analytics and Threat Classification
+Create an end-to-end Big Data system for processing cybersecurity event logs. The framework
+should perform large-scale distributed querying and apply machine learning models for threat
+classification and anomaly detection.
+11.4 Smart Agriculture Data Analytics Platform
+Develop a scalable Big Data framework to analyze agricultural datasets such as soil conditions,
+rainfall, and crop yield information. The system should support distributed analytics and machine
+learning–based clustering or classification for crop pattern insights.
+11.5 Social Media Sentiment Analysis Framework
+Design a distributed Big Data pipeline for analyzing large volumes of social media textual data.
+The system should perform scalable text processing and machine learning–based clustering or
+classification to extract sentiment trends and public opinion patterns.
+11.6 Large-Scale Network Traffic Analysis for Attack Pattern Detection
+Design and implement a MapReduce-based solution to process large volumes of network traffic
+log data. The system should analyze connection records to identify abnormal traffic patterns,
+frequency distribution of source IP addresses, and unusual request bursts that may indicate
+potential security threats. The implementation should demonstrate scalable distributed processing
+using the Hadoop framework.
+11.7 Product Review Analytics and Rating Aggregation
+Develop a MapReduce-based analytics system to process large-scale e-commerce product review
+datasets. The system should compute aggregated statistics such as average ratings, most frequently
+reviewed products, and review distribution patterns across categories. The solution must efficiently
+handle large text-based datasets using distributed MapReduce processing.

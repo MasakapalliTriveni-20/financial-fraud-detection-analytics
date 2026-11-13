@@ -1,0 +1,38 @@
+{
+    "dataset_name": "Nigerian Financial Transactions and Fraud Detection Dataset",
+    "dataset_source": "Hugging Face / ElectricSheepAfrica Consortium",
+    "dataset_size_gb": 1.88,
+    "total_records_processed": 150000,
+    "training_records": 120112,
+    "testing_records": 29888,
+    "feature_dimensions": 27,
+    "random_forest": {
+        "model_type": "RandomForestClassifier (PySpark MLlib)",
+        "num_trees": 30,
+        "max_depth": 10,
+        "training_time_sec": 11.39,
+        "accuracy": 96.36,
+        "precision": 92.85,
+        "recall": 96.36,
+        "f1_score": 94.57,
+        "roc_auc": 0.5817,
+        "pr_auc": 0.0434,
+        "confusion_matrix": {
+            "true_negative": 28800,
+            "false_positive": 0,
+            "false_negative": 1088,
+            "true_positive": 0
+        }
+    },
+    "gradient_boosted_trees": {
+        "model_type": "GBTClassifier (PySpark MLlib)",
+        "max_iter": 15,
+        "max_depth": 6,
+        "training_time_sec": 7.61,
+        "accuracy": 96.35,
+        "precision": 92.85,
+        "recall": 96.35,
+        "f1_score": 94.57,
+        "roc_auc": 0.5862
+    }
+}

@@ -1,0 +1,5 @@
+payment_channel,total_txns,fraud_txns,fraud_incidence_rate_pct,avg_channel_risk,total_fraud_loss
+Bank Transfer,37556,1431,3.81,0.3,1059882999.61
+USSD,37601,1363,3.62,0.8,1024698945.49
+Card,37370,1347,3.6,0.4,989279951.87
+Mobile App,37473,1273,3.4,0.6,902829501.93

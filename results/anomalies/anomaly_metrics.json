@@ -1,0 +1,10 @@
+{
+    "engine": "Isolation Forest (Scikit-Learn)",
+    "sample_size": 100000,
+    "n_estimators": 100,
+    "contamination": 0.05,
+    "anomalies_detected": 5000,
+    "normal_detected": 95000,
+    "pct_anomalous": 5.0,
+    "training_time_sec": 0.67
+}

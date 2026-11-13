@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Data & Large Archives (Do not push 1.8GB dataset directly to GitHub)
+data/raw/
+data/*.csv
+!data/sample_transactions.csv
+*.csv.gz
+*.part
+*.tar.gz
+*.zip
+V2-*.csv
+
+# Spark & Hadoop checkpoints & output partitions
+metastore_db/
+derby.log
+results/parquet/
+*.parquet
+checkpoint/
+
+# IDE & OS
+.idea/
+.vscode/
+.DS_Store
+*.swp

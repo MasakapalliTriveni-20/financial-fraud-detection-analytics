@@ -1,0 +1,3 @@
+status,total_transactions,percentage_of_total,total_financial_volume,avg_transaction_amount
+LEGITIMATE,144586,96.39,107149823370.66,741080.21
+FRAUDULENT,5414,3.61,3976691398.9,734520.02

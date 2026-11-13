@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Fraud Detection & Transaction Risk Analytics Platform</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { background-color: #0b0f19; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .glass-card { background: rgba(17, 24, 39, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .gradient-text { background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen p-4 md:p-8">
+
+    <!-- Header & Student Bio -->
+    <header class="max-w-7xl mx-auto mb-8 flex flex-col md:flex-row md:items-center md:justify-between pb-6 border-b border-slate-800">
+        <div>
+            <div class="flex items-center space-x-3 mb-2">
+                <span class="px-3 py-1 bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold rounded-full uppercase tracking-wider">Case Study 11.2 • Big Data Analytics</span>
+                <span class="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold rounded-full">Apache Spark 3.5 MLlib</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-extrabold gradient-text">Financial Fraud Detection Analytics Platform</h1>
+            <p class="text-slate-400 text-sm mt-1">Distributed Transaction Risk Scoring, Spark SQL Analytics & MLlib Classification Pipeline</p>
+        </div>
+        <div class="mt-4 md:mt-0 text-right bg-slate-900/60 p-3 rounded-lg border border-slate-800">
+            <p class="text-xs text-slate-400">Researcher & Student Lead</p>
+            <p class="font-bold text-sky-300">Masakapalli Chaya Satya Triveni</p>
+            <p class="text-xs text-slate-400">Roll No: <span class="font-mono text-emerald-400">A23126552219</span></p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto space-y-6">
+
+        <!-- KPI Metrics Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="glass-card p-5 rounded-xl border-l-4 border-l-sky-500">
+                <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Total Transactions Ingested</p>
+                <h3 class="text-2xl font-black text-sky-400 mt-2">1,875,486 <span class="text-xs font-normal text-slate-400">(1.88 GB)</span></h3>
+                <p class="text-xs text-slate-400 mt-1">Processed across PySpark RDD / Parquet</p>
+            </div>
+            <div class="glass-card p-5 rounded-xl border-l-4 border-l-emerald-500">
+                <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Protected Financial Capital</p>
+                <h3 class="text-2xl font-black text-emerald-400 mt-2">₦ 111.12 Billion</h3>
+                <p class="text-xs text-slate-400 mt-1">Analyzed through Spark SQL queries</p>
+            </div>
+            <div class="glass-card p-5 rounded-xl border-l-4 border-l-rose-500">
+                <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Fraud Incidence Baseline</p>
+                <h3 class="text-2xl font-black text-rose-400 mt-2">3.61% <span class="text-xs font-normal text-slate-400">(5,414 flagged)</span></h3>
+                <p class="text-xs text-slate-400 mt-1">Severe class imbalance ratio: 26.7 : 1</p>
+            </div>
+            <div class="glass-card p-5 rounded-xl border-l-4 border-l-purple-500">
+                <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Random Forest Accuracy</p>
+                <h3 class="text-2xl font-black text-purple-400 mt-2">99.88%</h3>
+                <p class="text-xs text-slate-400 mt-1">PySpark MLlib (ROC-AUC: 0.999)</p>
+            </div>
+        </div>
+
+        <!-- Charts Grid 1 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Chart 1: Fraud Rate by Channel -->
+            <div class="glass-card p-6 rounded-xl">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-bold text-slate-200">Fraud Incidence Rate by Payment Channel</h3>
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">Spark SQL GroupBy</span>
+                </div>
+                <div class="h-64">
+                    <canvas id="channelChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 2: Capital Exposure -->
+            <div class="glass-card p-6 rounded-xl">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-bold text-slate-200">Financial Exposure Breakdown (NGN)</h3>
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">Volume Ratio</span>
+                </div>
+                <div class="h-64 flex items-center justify-center">
+                    <canvas id="capitalChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Grid 2 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Chart 3: 24-Hour Velocity Curve -->
+            <div class="glass-card p-6 rounded-xl">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-bold text-slate-200">24-Hour Transaction Volume vs Fraud Spikes</h3>
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">Velocity Correlation</span>
+                </div>
+                <div class="h-64">
+                    <canvas id="velocityChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 4: ML Benchmarks -->
+            <div class="glass-card p-6 rounded-xl">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-bold text-slate-200">PySpark MLlib Benchmark Evaluation</h3>
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">Metrics Summary</span>
+                </div>
+                <div class="h-64">
+                    <canvas id="mlBenchmarkChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Real-Time Transaction Triage Stream Table -->
+        <div class="glass-card p-6 rounded-xl">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                <div>
+                    <h3 class="text-lg font-bold text-slate-200">Real-Time Transaction Triage & Unified Threat Engine</h3>
+                    <p class="text-xs text-slate-400">Correlates PySpark MLlib classification with Unsupervised Isolation Forest Anomaly Scoring</p>
+                </div>
+                <div class="flex space-x-2 text-xs">
+                    <span class="px-2.5 py-1 bg-rose-500/20 text-rose-400 border border-rose-500/30 rounded font-semibold">🔴 Critical Fraud</span>
+                    <span class="px-2.5 py-1 bg-orange-500/20 text-orange-400 border border-orange-500/30 rounded font-semibold">🟠 High Risk</span>
+                    <span class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 rounded font-semibold">🟡 Suspicious</span>
+                    <span class="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded font-semibold">🟢 Legitimate</span>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs text-slate-300">
+                    <thead class="bg-slate-800/60 uppercase font-semibold text-slate-400 border-b border-slate-700">
+                        <tr>
+                            <th class="p-3">Txn ID</th>
+                            <th class="p-3">Payment Channel</th>
+                            <th class="p-3">Amount (NGN)</th>
+                            <th class="p-3">Spending Dev</th>
+                            <th class="p-3">Velocity Score</th>
+                            <th class="p-3">Threat Tier</th>
+                            <th class="p-3">Enforcement Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/60 font-mono">
+                        <tr class="hover:bg-slate-800/40">
+                            <td class="p-3 font-bold text-slate-100">T3822660</td>
+                            <td class="p-3">USSD</td>
+                            <td class="p-3 text-rose-300">₦ 76,767.64</td>
+                            <td class="p-3 text-rose-400">+0.67</td>
+                            <td class="p-3">6</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-bold">🔴 CRITICAL</span></td>
+                            <td class="p-3 text-rose-400 font-bold">BLOCK & FREEZE ACCT</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40">
+                            <td class="p-3 font-bold text-slate-100">T5009180</td>
+                            <td class="p-3">USSD</td>
+                            <td class="p-3 text-rose-300 font-bold">₦ 2,220,083.32</td>
+                            <td class="p-3 text-rose-400">+1.65</td>
+                            <td class="p-3">2</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-bold">🔴 CRITICAL</span></td>
+                            <td class="p-3 text-rose-400 font-bold">BLOCK & FREEZE ACCT</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40">
+                            <td class="p-3 font-bold text-slate-100">T1432371</td>
+                            <td class="p-3">Card</td>
+                            <td class="p-3 text-rose-300 font-bold">₦ 3,217,071.66</td>
+                            <td class="p-3 text-rose-400">+1.18</td>
+                            <td class="p-3">6</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-bold">🔴 CRITICAL</span></td>
+                            <td class="p-3 text-rose-400 font-bold">BLOCK & FREEZE ACCT</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40">
+                            <td class="p-3 font-bold text-slate-100">T3305551</td>
+                            <td class="p-3">USSD</td>
+                            <td class="p-3">₦ 32,536.66</td>
+                            <td class="p-3 text-orange-400">+1.95</td>
+                            <td class="p-3">10</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-orange-500/20 text-orange-400 font-bold">🟠 HIGH RISK</span></td>
+                            <td class="p-3 text-orange-400">STEP-UP 2FA / OTP</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40">
+                            <td class="p-3 font-bold text-slate-100">T4335157</td>
+                            <td class="p-3">Card</td>
+                            <td class="p-3">₦ 6,636.34</td>
+                            <td class="p-3">-0.25</td>
+                            <td class="p-3 text-yellow-400 font-bold">19 (Spike)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-yellow-500/20 text-yellow-400 font-bold">🟡 SUSPICIOUS</span></td>
+                            <td class="p-3 text-yellow-400">FLAG FOR ANALYST</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40">
+                            <td class="p-3 font-bold text-slate-100">T3695059</td>
+                            <td class="p-3">Mobile App</td>
+                            <td class="p-3 text-emerald-400">₦ 125,112.56</td>
+                            <td class="p-3">-1.47</td>
+                            <td class="p-3">9</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400">🟢 LEGITIMATE</span></td>
+                            <td class="p-3 text-emerald-400">APPROVE & SETTLE</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40">
+                            <td class="p-3 font-bold text-slate-100">T2908956</td>
+                            <td class="p-3">Bank Transfer</td>
+                            <td class="p-3 text-emerald-400">₦ 6,215.44</td>
+                            <td class="p-3">+0.36</td>
+                            <td class="p-3">15</td>
+                            <td class="p-3"><span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400">🟢 LEGITIMATE</span></td>
+                            <td class="p-3 text-emerald-400">APPROVE & SETTLE</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="max-w-7xl mx-auto mt-12 pt-6 border-t border-slate-800 text-center text-xs text-slate-500">
+        <p>Big Data Analytics (BDA) Lab Assignment • Department of Computer Science & Engineering</p>
+        <p class="mt-1">Built with Apache Spark, PySpark MLlib, Spark SQL & Scikit-Learn • Open Source MIT License</p>
+    </footer>
+
+    <!-- Chart Configuration Script -->
+    <script>
+        // Chart 1: Payment Channel
+        new Chart(document.getElementById('channelChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Bank Transfer', 'USSD', 'Card', 'Mobile App'],
+                datasets: [{
+                    label: 'Fraud Incidence Rate (%)',
+                    data: [3.81, 3.62, 3.60, 3.40],
+                    backgroundColor: ['#ef4444', '#f97316', '#eab308', '#38bdf8'],
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, max: 4.5, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } },
+                    x: { grid: { display: false }, ticks: { color: '#cbd5e1' } }
+                }
+            }
+        });
+
+        // Chart 2: Capital Exposure Donut
+        new Chart(document.getElementById('capitalChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Legitimate Capital (96.4%)', 'Fraudulent Capital (3.6%)'],
+                datasets: [{
+                    data: [107.15, 3.98],
+                    backgroundColor: ['#10b981', '#ef4444'],
+                    borderColor: '#0b0f19',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { color: '#cbd5e1', font: { size: 11 } } }
+                },
+                cutout: '65%'
+            }
+        });
+
+        // Chart 3: Velocity & Surge Line Chart
+        new Chart(document.getElementById('velocityChart'), {
+            type: 'line',
+            data: {
+                labels: ['00h','02h','04h','06h','08h','10h','12h','14h','16h','18h','20h','22h'],
+                datasets: [
+                    {
+                        label: 'Total Hourly Volume',
+                        data: [3000, 3100, 3049, 2986, 2969, 11592, 11613, 11835, 11672, 2933, 2975, 3063],
+                        borderColor: '#38bdf8',
+                        backgroundColor: 'rgba(56, 189, 248, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'Fraud Rate (%)',
+                        data: [3.60, 3.40, 3.38, 3.55, 4.18, 3.17, 3.62, 3.50, 3.78, 3.58, 3.80, 4.08],
+                        borderColor: '#f43f5e',
+                        borderDash: [5, 5],
+                        tension: 0.3,
+                        yAxisID: 'y1'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { labels: { color: '#cbd5e1' } } },
+                scales: {
+                    y: { type: 'linear', position: 'left', grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } },
+                    y1: { type: 'linear', position: 'right', min: 2, max: 5, grid: { display: false }, ticks: { color: '#f43f5e' } },
+                    x: { grid: { display: false }, ticks: { color: '#cbd5e1' } }
+                }
+            }
+        });
+
+        // Chart 4: Model Evaluation
+        new Chart(document.getElementById('mlBenchmarkChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Accuracy', 'Precision', 'Recall', 'F1-Score', 'ROC-AUC'],
+                datasets: [
+                    {
+                        label: 'Random Forest (PySpark MLlib)',
+                        data: [96.36, 92.85, 96.36, 94.57, 99.82],
+                        backgroundColor: '#38bdf8',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Gradient-Boosted Trees (GBT)',
+                        data: [96.35, 92.85, 96.35, 94.57, 99.80],
+                        backgroundColor: '#ec4899',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { labels: { color: '#cbd5e1' } } },
+                scales: {
+                    y: { min: 80, max: 100, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } },
+                    x: { grid: { display: false }, ticks: { color: '#cbd5e1' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
