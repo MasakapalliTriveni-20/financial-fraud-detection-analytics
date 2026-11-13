@@ -233,6 +233,7 @@ python src/generate_visualizations.py
 * **Performance:** Random Forest — Accuracy: 96.36%, F1: 94.57%, AUC: 0.5817
 * **Department:** Department of Computer Science & Engineering
 * **Course:** Big Data Analytics (BDA) Laboratory
+* **Dataset:** [Nigerian Financial Transactions and Fraud Detection Dataset](https://huggingface.co/datasets/AttyAbson/Nigerian-Financial-Transactions-and-Fraud-Detection-Dataset)
 * **GitHub:** [@MasakapalliTriveni-20](https://github.com/MasakapalliTriveni-20)
 * **LinkedIn:** [Masakapalli Chaya Satya Triveni](https://www.linkedin.com/in/masakapalli-triveni)
 

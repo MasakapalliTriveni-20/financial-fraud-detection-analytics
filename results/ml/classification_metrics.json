@@ -1,6 +1,7 @@
 {
     "dataset_name": "Nigerian Financial Transactions and Fraud Detection Dataset",
-    "dataset_source": "Hugging Face / ElectricSheepAfrica Consortium",
+    "dataset_source": "Hugging Face — AttyAbson",
+    "dataset_url": "https://huggingface.co/datasets/AttyAbson/Nigerian-Financial-Transactions-and-Fraud-Detection-Dataset",
     "dataset_size_gb": 1.88,
     "total_records_processed": 150000,
     "training_records": 120112,
